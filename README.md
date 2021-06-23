@@ -48,7 +48,17 @@ GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I can use this project as a reference for:
+
+- setting up a Table View
+    
+    - put TableView in storyboard
+    - create outlet
+    - put necessary "roles" in <> next to ViewController title
+    - implement 2 necessary methods
+    - reloadData on didLoad
+    
+- creating a Network Request
 
 ## Credits
 

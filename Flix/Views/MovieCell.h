@@ -1,5 +1,5 @@
 //
-//  MoviesViewController.h
+//  MovieCell.h
 //  Flix
 //
 //  Created by Sanjana Meduri on 6/23/21.
@@ -9,10 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MoviesViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *posterView;
-@property (weak, nonatomic) IBOutlet UILabel *synoposisLabel;
+@interface MovieCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *posterView;
 
 @end
 
