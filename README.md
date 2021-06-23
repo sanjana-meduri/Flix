@@ -12,7 +12,7 @@ The following **required** functionality is complete:
 - [x] User can view a list of movies currently playing in theaters from The Movie Database.
 - [x] Poster images are loaded using the UIImageView category in the AFNetworking library.
 - [ ] User sees a loading state while waiting for the movies API.
-- [ ] User can pull to refresh the movie list.
+- [x ] User can pull to refresh the movie list.
 - [ ] User sees an error message when there's a networking error.
 - [ ] User can tap a tab bar button to view a grid layout of Movie Posters using a CollectionView.
 
@@ -70,6 +70,10 @@ I can use this project as a reference for:
 
     - Content Mode: Aspect Fill
     - Clip to Bounds should be checked
+    
+- pull to refresh featuer
+
+    - using UIRefreshControl
     
 ## Credits
 
