@@ -12,7 +12,9 @@
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate> //<says this view controller is data source, tells us that this can be delegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+//setting up global variables
 @property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -25,6 +27,15 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    [self fetchMovies]; //network request
+    
+    self.refreshControl = [[UIRefreshControl alloc] init]; //initializing pull to refresh control
+    [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged]; //call fetchMovies on self when UIControlEventValueChanged
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    // [self.tableView addSubview:self.refreshControl]; //adds refresh control view to the top of the table view
+}
+
+- (void)fetchMovies {
     //setting up network request
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -48,6 +59,7 @@
                //Reload your table view data
                [self.tableView reloadData];
            }
+        [self.refreshControl endRefreshing]; //stop refreshing (without this is will refresh forever)
        }];
     [task resume];
 }
