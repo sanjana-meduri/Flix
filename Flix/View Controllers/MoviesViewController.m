@@ -7,6 +7,7 @@
 
 #import "MoviesViewController.h"
 #import "MovieCell.h" //in order to use the protype cell outlets
+#import "UIImageView+AFNetworking.h" //to add methods to ImageView
 
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate> //<says this view controller is data source, tells us that this can be delegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -72,6 +73,14 @@
     //cell.textLabel.text = movie[@"title"]; //this sets the text of the cell
     cell.titleLabel.text = movie[@"title"];
     cell.synopsisLabel.text = movie[@"overview"];
+    
+    //get path to image
+    NSString *baseURLString= @"https://image.tmdb.org/t/p/w500";
+    NSString *posterURLString = movie[@"poster_path"];
+    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    cell.posterView.image = nil; //clears out image from previous cell so that when it lags, the previous image doesn't show up
+    [cell.posterView setImageWithURL:posterURL];
     return cell;
 }
 

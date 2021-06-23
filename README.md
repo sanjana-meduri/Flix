@@ -59,7 +59,13 @@ I can use this project as a reference for:
     - reloadData on didLoad
     
 - creating a Network Request
+- using CocoaPods 
 
+    - in repository, `pod init`
+    - `open Podfile` and add what you need
+    - `pod install`
+    - use the .xcworkspace file from now on to open project
+    
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
