@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40BECB4268392E10029FDCD /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BECB3268392E10029FDCD /* MoviesViewController.m */; };
 		E4FC53E22683881D0058B93A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FC53E12683881D0058B93A /* AppDelegate.m */; };
 		E4FC53E52683881D0058B93A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FC53E42683881D0058B93A /* SceneDelegate.m */; };
-		E4FC53E82683881D0058B93A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FC53E72683881D0058B93A /* ViewController.m */; };
 		E4FC53EB2683881D0058B93A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4FC53E92683881D0058B93A /* Main.storyboard */; };
 		E4FC53ED2683881E0058B93A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FC53EC2683881E0058B93A /* Assets.xcassets */; };
 		E4FC53F02683881E0058B93A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4FC53EE2683881E0058B93A /* LaunchScreen.storyboard */; };
@@ -36,13 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E40BECB2268392E10029FDCD /* MoviesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		E40BECB3268392E10029FDCD /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		E4FC53DD2683881D0058B93A /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FC53E02683881D0058B93A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4FC53E12683881D0058B93A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E4FC53E32683881D0058B93A /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		E4FC53E42683881D0058B93A /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		E4FC53E62683881D0058B93A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E4FC53E72683881D0058B93A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E4FC53EA2683881D0058B93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4FC53EC2683881E0058B93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4FC53EF2683881E0058B93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E40BECB5268393D10029FDCD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E40BECB2268392E10029FDCD /* MoviesViewController.h */,
+				E40BECB3268392E10029FDCD /* MoviesViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		E4FC53D42683881D0058B93A = {
 			isa = PBXGroup;
 			children = (
@@ -104,12 +113,11 @@
 		E4FC53DF2683881D0058B93A /* Flix */ = {
 			isa = PBXGroup;
 			children = (
+				E40BECB5268393D10029FDCD /* View Controllers */,
 				E4FC53E02683881D0058B93A /* AppDelegate.h */,
 				E4FC53E12683881D0058B93A /* AppDelegate.m */,
 				E4FC53E32683881D0058B93A /* SceneDelegate.h */,
 				E4FC53E42683881D0058B93A /* SceneDelegate.m */,
-				E4FC53E62683881D0058B93A /* ViewController.h */,
-				E4FC53E72683881D0058B93A /* ViewController.m */,
 				E4FC53E92683881D0058B93A /* Main.storyboard */,
 				E4FC53EC2683881E0058B93A /* Assets.xcassets */,
 				E4FC53EE2683881E0058B93A /* LaunchScreen.storyboard */,
@@ -266,8 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4FC53E82683881D0058B93A /* ViewController.m in Sources */,
 				E4FC53E22683881D0058B93A /* AppDelegate.m in Sources */,
+				E40BECB4268392E10029FDCD /* MoviesViewController.m in Sources */,
 				E4FC53F32683881E0058B93A /* main.m in Sources */,
 				E4FC53E52683881D0058B93A /* SceneDelegate.m in Sources */,
 			);
