@@ -75,6 +75,10 @@ I can use this project as a reference for:
 
     - using UIRefreshControl
     
+- create segue (used show segue to create movie detail screen)
+
+- navigation segue method to pass information between two view controllers (remember that what you want to pass between them has to go in the header file)
+    
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.

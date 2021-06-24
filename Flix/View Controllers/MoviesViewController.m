@@ -7,6 +7,7 @@
 
 #import "MoviesViewController.h"
 #import "MovieCell.h" //in order to use the protype cell outlets
+#import "DetailsViewController.h" //needed to link the two view controllers
 #import "UIImageView+AFNetworking.h" //to add methods to ImageView
 
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate> //<says this view controller is data source, tells us that this can be delegate>
@@ -96,14 +97,21 @@
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UITableViewCell *tappedCell = sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+    NSDictionary *movie = self.movies[indexPath.row];
+    
+    DetailsViewController *detailsViewController = [segue destinationViewController];
+    detailsViewController.movie = movie;
+    
+    NSLog(@"Tapping on a movie!");
 }
-*/
+
 
 @end
