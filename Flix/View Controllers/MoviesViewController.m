@@ -47,6 +47,30 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
                NSLog(@"%@", [error localizedDescription]);
+               
+               //create an alert if there is no network connection
+               UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Connection Failed" message:@"It looks like you are not connected to the Internet! Please check your connection and try again." preferredStyle:UIAlertControllerStyleAlert];
+               
+               //create a retry action
+               UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+                   [self fetchMovies]; //retry getting the movies
+               }];
+               
+               //create a retry button
+               [alert addAction:retryAction];
+               
+               //create a cancel action
+               UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action){
+                        // doing nothing in these brackets just dismisses the view
+               }];
+               
+               //create a cancel button
+               [alert addAction:cancelAction];
+               
+               //actually show the alert
+               [self presentViewController:alert animated:YES completion:^{
+                   //putting code in here would be for what happens after controller is done
+               }];
            }
            else {
                //Get the array of movies
