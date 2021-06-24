@@ -80,6 +80,8 @@ I can use this project as a reference for:
 - navigation segue method to pass information between two view controllers (remember that what you want to pass between them has to go in the header file)
 
 - create a basic loading screen (`UIActivityIndicator`)
+
+- create an alert using `UIAlertController`
     
 ## Credits
 
