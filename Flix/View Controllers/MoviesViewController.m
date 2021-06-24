@@ -16,6 +16,7 @@
 //setting up global variables
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -23,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.activityIndicator startAnimating]; //start loading circle
     
     //setting up the Table View
     self.tableView.dataSource = self;
@@ -59,6 +62,8 @@
                
                //Reload your table view data
                [self.tableView reloadData];
+               
+               [self.activityIndicator stopAnimating]; //stop loading circle
            }
         [self.refreshControl endRefreshing]; //stop refreshing (without this is will refresh forever)
        }];

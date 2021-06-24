@@ -2,7 +2,7 @@
 
 **Flix** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **3** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
@@ -11,7 +11,7 @@ The following **required** functionality is complete:
 - [x] User sees an app icon on the home screen and a styled launch screen.
 - [x] User can view a list of movies currently playing in theaters from The Movie Database.
 - [x] Poster images are loaded using the UIImageView category in the AFNetworking library.
-- [ ] User sees a loading state while waiting for the movies API.
+- [x ] User sees a loading state while waiting for the movies API.
 - [x] User can pull to refresh the movie list.
 - [ ] User sees an error message when there's a networking error.
 - [ ] User can tap a tab bar button to view a grid layout of Movie Posters using a CollectionView.
@@ -78,6 +78,8 @@ I can use this project as a reference for:
 - create segue (used show segue to create movie detail screen)
 
 - navigation segue method to pass information between two view controllers (remember that what you want to pass between them has to go in the header file)
+
+- create a basic loading screen (`UIActivityIndicator`)
     
 ## Credits
 
