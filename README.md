@@ -82,6 +82,8 @@ I can use this project as a reference for:
 - create a basic loading screen (`UIActivityIndicator`)
 
 - create an alert using `UIAlertController`
+
+- create a CollectionView (very similar process to TableView)
     
 ## Credits
 
