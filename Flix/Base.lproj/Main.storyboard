@@ -13,7 +13,7 @@
         <scene sceneID="HGM-Ex-717">
             <objects>
                 <navigationController id="htm-5M-rRR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List View" id="CkP-po-0kg"/>
+                    <tabBarItem key="tabBarItem" title="List View" image="list.dash" catalog="system" id="CkP-po-0kg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="82W-f0-nI9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,7 +30,7 @@
         <scene sceneID="COL-AT-dca">
             <objects>
                 <navigationController id="fx6-xW-0p4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grid View" id="8oO-oJ-Idb"/>
+                    <tabBarItem key="tabBarItem" title="Grid View" image="rectangle.grid.3x2.fill" catalog="system" id="8oO-oJ-Idb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Slt-26-0MN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -329,6 +329,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="rectangle.grid.3x2.fill" catalog="system" width="128" height="101"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
