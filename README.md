@@ -37,9 +37,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+The first GIF simulates good user connection, while the second GIF starts out with no Internet connection and then refreshes with the Internet connection restored.
 
-<img src='./flixcomped.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width=200 height=500 />
+<img src='./flix1comp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width=200 height=500 />
+<img src='./flix2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width=200 height=500 />
 
 
 GIF created with [Kap](https://getkap.co/).
