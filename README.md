@@ -20,27 +20,26 @@ The following **optional** features are implemented:
 
 - [x] User can tap a poster in the collection view to see a detail screen of that movie
 - [x] User can search for a movie.
-- [ ] All images fade in as they are loading.
 - [x] User can view the large movie poster by tapping on a cell. (They can see the movie trailer.)
+- [x] Customize the selection effect of the cell. (set to no selection effect)
+- [x] Customize the navigation bar. (dark mode and changed icons)
+- [x] Customize the UI. (dark mode)
+- [x] Run your app on a real device.
+- [ ] All images fade in as they are loading.
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
-- [ ] Customize the selection effect of the cell.
-- [ ] Customize the navigation bar.
-- [ ] Customize the UI.
 - [ ] User can view the app on various device sizes and orientations.
-- [ ] Run your app on a real device.
 
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. I would have liked to implement a settings option that can change the app from Dark Mode to Light Mode and change the language of the app.
+2. I want to change how I implemented the CollectionView to include some sort of tag on each cell, so that I can search in the Grid View as well.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+
+The first GIF simulates good user connection, while the second GIF starts out with no Internet connection and then refreshes with the Internet connection restored.
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
