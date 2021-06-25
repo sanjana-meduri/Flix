@@ -41,8 +41,8 @@ Here's a walkthrough of implemented user stories:
 
 The first GIF simulates good user connection, while the second GIF starts out with no Internet connection and then refreshes with the Internet connection restored.
 
-<img src='./flix1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='./flix2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./flix1comp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width=200 height=500 />
+<img src='./flix2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width=200 height=500 />
 
 
 GIF created with [Kap](https://getkap.co/).
