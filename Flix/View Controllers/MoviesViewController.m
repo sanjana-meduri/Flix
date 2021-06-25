@@ -10,11 +10,13 @@
 #import "DetailsViewController.h" //needed to link the two view controllers
 #import "UIImageView+AFNetworking.h" //to add methods to ImageView
 
-@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate> //<says this view controller is data source, tells us that this can be delegate>
+@interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> //<says this view controller is data source, tells us that this can be delegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 //setting up global variables
 @property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSArray *filteredMovies; //for search bar
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
@@ -31,8 +33,10 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    [self fetchMovies]; //network request
+    self.searchBar.delegate = self;
     
+    [self fetchMovies]; //network request
+        
     self.refreshControl = [[UIRefreshControl alloc] init]; //initializing pull to refresh control
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged]; //call fetchMovies on self when UIControlEventValueChanged
     [self.tableView insertSubview:self.refreshControl atIndex:0];
@@ -84,6 +88,8 @@
                    NSLog(@"%@", movie[@"title"]);
                }
                
+               self.filteredMovies = self.movies;
+               
                //Reload your table view data
                [self.tableView reloadData];
                
@@ -96,7 +102,7 @@
 
 //required method for table view -- sets the number of rows in a table
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.movies.count;
+    return self.filteredMovies.count;
 }
 
 //required method for table view -- tells the table what to do with each cell (input indexPath has row and section properties)
@@ -111,7 +117,7 @@
     //set text of cell
     //cell.textLabel.text = [NSString stringWithFormat:(@"row: %d, section %d"), indexPath.row, indexPath.section];
     
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.filteredMovies[indexPath.row];
     //cell.textLabel.text = movie[@"title"]; //this sets the text of the cell
     cell.titleLabel.text = movie[@"title"];
     cell.synopsisLabel.text = movie[@"overview"];
@@ -126,6 +132,22 @@
     return cell;
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText.length != 0){
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings){
+            return [evaluatedObject[@"title"] containsString:searchText];
+        }];
+        
+        self.filteredMovies = [self.movies filteredArrayUsingPredicate:predicate];
+    }
+    
+    else{
+        self.filteredMovies = self.movies;
+    }
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -134,7 +156,7 @@
     // Pass the selected object to the new view controller.
     UITableViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.filteredMovies[indexPath.row];
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
