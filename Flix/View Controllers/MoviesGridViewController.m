@@ -7,6 +7,7 @@
 
 #import "MoviesGridViewController.h"
 #import "MovieCollectionCell.h" //need this to use cell template from storyboard -- MUST SET ID AND NAME TO THIS
+#import "DetailsGridViewController.h" //needed to link the two view controllers
 #import "UIImageView+AFNetworking.h" //to add methods to ImageView
 
 
@@ -89,16 +90,6 @@
     [task resume];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     //create a movie collection cell
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
@@ -119,5 +110,21 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.movies.count;
 }
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     UICollectionViewCell *tappedCell = sender;
+     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
+     NSDictionary *movie = self.movies[indexPath.item];
+     
+     DetailsGridViewController *detailsViewController = [segue destinationViewController];
+     detailsViewController.movie = movie;
+     
+     NSLog(@"Tapping on a movie!");
+ }
 
 @end
