@@ -39,6 +39,7 @@
         
     self.refreshControl = [[UIRefreshControl alloc] init]; //initializing pull to refresh control
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged]; //call fetchMovies on self when UIControlEventValueChanged
+    [self.refreshControl setTintColor:[UIColor blackColor]];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     // [self.tableView addSubview:self.refreshControl]; //adds refresh control view to the top of the table view
 }
@@ -129,6 +130,8 @@
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     cell.posterView.image = nil; //clears out image from previous cell so that when it lags, the previous image doesn't show up
     [cell.posterView setImageWithURL:posterURL];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
