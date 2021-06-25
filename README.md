@@ -36,12 +36,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 2. I want to change how I implemented the CollectionView to include some sort of tag on each cell, so that I can search in the Grid View as well.
 
 ## Video Walkthrough
-
-The first GIF simulates good user connection, while the second GIF starts out with no Internet connection and then refreshes with the Internet connection restored.
-
-<img src='./flix1comp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width=200 height=500 />
-<img src='./flix2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width=200 height=500 />
-
+<img src='./flixreal.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width=200 height=500 />
 
 GIF created with [Kap](https://getkap.co/).
 
