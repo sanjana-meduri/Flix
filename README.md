@@ -84,10 +84,6 @@ I can use this project as a reference for:
 - create an alert using `UIAlertController`
 
 - create a CollectionView (very similar process to TableView) and configuring layout
-
-TODO:
-- add icons to tab bar
-- optional tasks
     
 ## Credits
 
